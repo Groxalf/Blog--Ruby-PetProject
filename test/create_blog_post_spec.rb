@@ -1,38 +1,19 @@
 require 'rspec'
 require 'rspec/mocks'
-
-
-
-class PostService
-  def create (post); end
-end
-
-class CreateBlogPost
-
-  def initialize(service)
-    @service = service
-  end
-
-  def create_blog_post(post)
-    @service.create(post)
-  end
-end
-
-class Post
-
-  def initialize(title, content)
-    @title = title
-    @content = content
-  end
-
-end
+require_relative '../src/business/post_service.rb'
+require_relative '../src/actions/create_blog_post.rb'
+require_relative '../src/business/post.rb'
 
 
 describe 'Create Blog Post' do
-  it 'has to save the post in our blog when created' do
-    post = Post.new('anyTitle', 'anyContent')
-    service = spy('postservice')
-    CreateBlogPost.new(service).create_blog_post(post)
-    expect(service).to have_received :create
+  context 'when create a post' do
+    let(:title) {'anyTitle'}
+    let(:content) {'anyContent'}
+    it 'has to save it in the blog' do
+      post = Post.new('anyTitle', 'anyContent')
+      service = spy('postservice')
+      CreateBlogPost.new(service).create_blog_post(post)
+      expect(service).to have_received :create
+    end
   end
 end
