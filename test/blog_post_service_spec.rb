@@ -4,7 +4,7 @@ require_relative '../src/business/post'
 
 describe 'Blog Post Service' do
   context 'when create a document' do
-    it 'saves it on the blog' do
+    it 'has to save it on the blog' do
       repository = spy 'BlogPostsRepository'
       service = PostService.new repository
 
