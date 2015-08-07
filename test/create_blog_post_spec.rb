@@ -11,7 +11,7 @@ describe 'Create Blog Post' do
     let(:content) {'anyContent'}
     it 'has to save it in the blog' do
       post = Post.new('anyTitle', 'anyContent')
-      service = spy('postservice')
+      service = spy('PostService')
       CreateBlogPost.new(service).create_blog_post(post)
       expect(service).to have_received :create
     end
