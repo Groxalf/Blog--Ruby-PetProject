@@ -1,0 +1,1 @@
+A pet project with Ronny Ancorini @RonnyAnc on twitter to learn Ruby and to practice structuring your code in the DDD way.
