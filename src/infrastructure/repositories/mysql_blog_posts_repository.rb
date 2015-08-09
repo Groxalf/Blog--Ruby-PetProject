@@ -1,6 +1,6 @@
 require 'mysql2'
 
-class MySQLBlogPostsRepository
+class MysqlBlogPostsRepository
 
   def initialize data_connection
     @connection = Mysql2::Client.new data_connection

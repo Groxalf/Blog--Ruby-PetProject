@@ -1,6 +1,6 @@
 require 'rspec'
 require 'mysql2'
-require_relative '../src/infrastructure/repositories/my_sql_blog_posts_repository'
+require_relative '../src/infrastructure/repositories/mysql_blog_posts_repository'
 require_relative '../src/business/post'
 
 
@@ -16,7 +16,7 @@ describe 'MySQL Blog Posts Repository' do
   end
 
   it 'has to save a document' do
-    repository = MySQLBlogPostsRepository.new(
+    repository = MysqlBlogPostsRepository.new(
       :host => 'localhost',
       :username => 'root',
       :password => '123456',
