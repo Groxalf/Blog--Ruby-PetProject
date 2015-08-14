@@ -1,1 +1,3 @@
-mysql -uroot -p'123456' -e'CREATE DATABASE blog;'
+#!/usr/bin/env bash
+mysql -u"$1" -p"$2" -e'CREATE DATABASE blog;'
+
