@@ -12,4 +12,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: 'provisioning/install-mysql.sh', args: '123456'
   config.vm.provision :shell, path: 'provisioning/install-bundler.sh',              privileged: false
   config.vm.provision :shell, path: 'provisioning/install-gems.sh',                 privileged: false
+  config.vm.provision :shell, path: 'provisioning/create-database.sh',                 privileged: true
 end
